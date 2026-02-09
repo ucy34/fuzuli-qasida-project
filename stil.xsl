@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="tei">
+<xsl:stylesheet version="1.0" xmlns:xsl="[http://www.w3.org/1999/XSL/Transform](http://www.w3.org/1999/XSL/Transform)" xmlns:tei="[http://www.tei-c.org/ns/1.0](http://www.tei-c.org/ns/1.0)" exclude-result-prefixes="tei">
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
 
     <xsl:template match="/">
@@ -118,7 +118,7 @@
                             <label for="aboutToggle" class="close-about">×</label>
                             <h2 style="color:var(--accent); text-align:center;">About This Project</h2>
                             <p>This website was designed by <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong> for Dr. Christian Casey's course.</p>
-                            <p>Manuscript source: <a href="https://acikarisim.tbmm.gov.tr/" target="_blank" style="color:var(--accent); font-weight:bold;">TBMM Open Access</a>.</p>
+                            <p>Manuscript source: <a href="[https://acikarisim.tbmm.gov.tr/](https://acikarisim.tbmm.gov.tr/)" target="_blank" style="color:var(--accent); font-weight:bold;">TBMM Open Access</a>.</p>
                             <hr/>
                             <p><strong>FAQ:</strong> A Kaside is a formal lyric poem. Fuzuli (16th c.) used this form to blend cosmology with divine love.</p>
                         </div>
@@ -157,4 +157,3 @@
         </html>
     </xsl:template>
 </xsl:stylesheet>
-``` [cite: 1, 61]
