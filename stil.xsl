@@ -7,69 +7,120 @@
             <head>
                 <title>Fuzûlî Digital Edition</title>
                 <style>
-                    body { font-family: 'Palatino', serif; background-color: #0a192f; color: #e6f1ff; margin: 0; padding: 20px; }
-                    .container { max-width: 1000px; margin: auto; }
-                    .header { text-align: center; padding: 40px; border-bottom: 2px solid #64ffda; margin-bottom: 40px; }
-                    
-                    /* DİL DEĞİŞTİRME BUTONU */
-                    #langToggle { display: none; }
-                    .toggle-btn {
-                        position: fixed; top: 20px; right: 20px; z-index: 1000;
-                        background: #64ffda; color: #0a192f; padding: 12px 25px;
-                        border-radius: 30px; cursor: pointer; font-weight: bold;
-                        box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s;
+                    /* TEMEL RENK DEĞİŞKENLERİ (LIGHT MODE - Arkadaşının Tasarımı) */
+                    :root {
+                        --bg-main: #f4f1ea;
+                        --bg-card: #ffffff;
+                        --text-primary: #2c3e50;
+                        --accent: #800000;
+                        --border: #ccc;
+                        --shadow: rgba(0,0,0,0.1);
                     }
-                    .toggle-btn:hover { background: #fff; transform: scale(1.05); }
 
-                    /* BUTON METNİ DEĞİŞİMİ */
-                    #langToggle:not(:checked) ~ .toggle-btn:after { content: "Show English Translation"; }
-                    #langToggle:checked ~ .toggle-btn:after { content: "Show Turkish Transcription"; }
+                    /* DARK MODE RENK DEĞİŞKENLERİ (Bağımsız Tetiklenir) */
+                    #darkToggle:checked ~ .site-wrapper {
+                        --bg-main: #121212;
+                        --bg-card: #1e1e1e;
+                        --text-primary: #e0e0e0;
+                        --accent: #ff4d4d;
+                        --border: #333;
+                        --shadow: rgba(0,0,0,0.5);
+                    }
 
-                    /* METİN GİZLEME/GÖSTERME MANTIĞI */
-                    .translation { display: none; color: #64ffda; font-size: 1.2em; font-style: italic; line-height: 1.7; }
-                    .ota { display: block; font-size: 1.3em; color: #ccd6f6; line-height: 1.7; }
+                    body { 
+                        margin: 0; 
+                        padding: 0; 
+                        font-family: 'Georgia', serif; 
+                        background-color: var(--bg-main);
+                        transition: background-color 0.3s ease;
+                    }
 
-                    #langToggle:checked ~ .container .ota { display: none; }
-                    #langToggle:checked ~ .container .translation { display: block; }
+                    .site-wrapper {
+                        min-height: 100vh;
+                        padding: 20px;
+                        color: var(--text-primary);
+                    }
 
-                    /* Sayfa Yapısı */
-                    .page-wrapper { display: flex; gap: 30px; background: #112240; margin-bottom: 50px; padding: 25px; border-radius: 15px; border: 1px solid #233554; }
-                    .facsimile { flex: 1; text-align: center; }
-                    .facsimile img { width: 100%; border-radius: 8px; border: 1px solid #64ffda; }
-                    .transcription { flex: 1.2; padding-top: 10px; }
-                    .couplet { margin-bottom: 35px; min-height: 80px; padding-left: 15px; border-left: 2px solid rgba(100, 255, 218, 0.2); }
+                    /* KONTROL PANELİ (SAĞ ÜST) */
+                    .nav-controls {
+                        position: fixed; top: 20px; right: 20px; z-index: 1000;
+                        display: flex; flex-direction: column; gap: 10px;
+                    }
+
+                    .btn {
+                        background: var(--accent); color: white; padding: 12px 20px; 
+                        border-radius: 4px; box-shadow: 0 4px 6px var(--shadow); 
+                        font-weight: bold; cursor: pointer; font-size: 13px; text-align: center;
+                        user-select: none; border: none; transition: 0.2s;
+                    }
+                    .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+                    /* GİZLİ CHECKBOX'LAR */
+                    #langToggle, #darkToggle { display: none; }
+
+                    /* BUTON METİNLERİ */
+                    #langToggle:not(:checked) ~ .nav-controls .lang-btn:after { content: "Show English Translation"; }
+                    #langToggle:checked ~ .nav-controls .lang-btn:after { content: "Show Turkish Transcription"; }
                     
-                    .analysis-footer { background: #112240; padding: 30px; border-radius: 15px; border-top: 4px solid #64ffda; margin-top: 50px; }
-                    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-                    th, td { padding: 12px; border: 1px solid #233554; text-align: left; }
-                    th { color: #64ffda; background: #1d2d50; }
+                    #darkToggle:not(:checked) ~ .nav-controls .dark-btn:after { content: "🌙 Enable Dark Mode"; }
+                    #darkToggle:checked ~ .nav-controls .dark-btn:after { content: "☀️ Enable Light Mode"; }
+
+                    /* SAYFA DÜZENİ */
+                    .header-section { text-align: center; border-bottom: 3px double var(--accent); margin-bottom: 40px; padding: 20px; }
+                    
+                    .page-container { 
+                        display: flex; flex-direction: row; background: var(--bg-card); 
+                        margin-bottom: 50px; padding: 25px; border-radius: 8px; 
+                        box-shadow: 0 4px 15px var(--shadow); max-width: 1200px; 
+                        margin-left: auto; margin-right: auto; border: 1px solid var(--border);
+                    }
+
+                    .manuscript-side { flex: 1; padding: 10px; border-right: 1px solid var(--border); text-align: center; }
+                    .manuscript-side img { width: 100%; max-width: 500px; border: 1px solid var(--border); border-radius: 4px; }
+                    
+                    .text-side { flex: 1; padding: 30px; }
+
+                    /* DİL DEĞİŞİM MANTIĞI */
+                    .tr-text { display: block; font-style: italic; font-size: 1.3em; line-height: 1.8; }
+                    .en-text { display: none; font-size: 1.2em; border-left: 5px solid var(--accent); padding-left: 20px; line-height: 1.7; color: var(--text-primary); }
+
+                    #langToggle:checked ~ .site-wrapper .tr-text { display: none; }
+                    #langToggle:checked ~ .site-wrapper .en-text { display: block; }
+
+                    .couplet { margin-bottom: 35px; }
+                    .folio-label { font-weight: bold; color: var(--accent); display: block; margin-top: 15px; font-size: 1.1em; }
                 </style>
             </head>
             <body>
                 <input type="checkbox" id="langToggle" />
-                <label for="langToggle" class="toggle-btn">🌐 </label>
+                <input type="checkbox" id="darkToggle" />
+                
+                <div class="nav-controls">
+                    <label for="langToggle" class="btn lang-btn"></label>
+                    <label for="darkToggle" class="btn dark-btn"></label>
+                </div>
 
-                <div class="container">
-                    <div class="header">
-                        <h1>Fuzûlî: Bahar Kasîdesi</h1>
-                        <p>Digital TEI Edition | Linguistic Variant Analysis</p>
+                <div class="site-wrapper">
+                    <div class="header-section">
+                        <h1 style="color: var(--accent);">Kasîde-i Fuzûlî</h1>
+                        <p>Digital Humanities Edition | Mehmet Eray Avcı &amp; Uğur Can Yıldız</p>
                     </div>
 
                     <xsl:for-each select="//tei:pb">
-                        <div class="page-wrapper">
-                            <div class="facsimile">
+                        <div class="page-container">
+                            <div class="manuscript-side">
                                 <img src="{@facs}" alt="Manuscript Page"/>
-                                <p style="color:#64ffda; font-weight:bold; margin-top:15px;">Varak: <xsl:value-of select="@n"/></p>
+                                <span class="folio-label">Folio: <xsl:value-of select="@n"/></span>
                             </div>
-                            <div class="transcription">
+                            <div class="text-side">
                                 <xsl:for-each select="following-sibling::tei:div[1]/tei:lg">
                                     <div class="couplet">
-                                        <div class="ota">
+                                        <div class="tr-text">
                                             <xsl:for-each select="tei:l">
                                                 <span style="display:block;"><xsl:value-of select="."/></span>
                                             </xsl:for-each>
                                         </div>
-                                        <div class="translation">
+                                        <div class="en-text">
                                             <xsl:value-of select="tei:note[@type='translation']"/>
                                         </div>
                                     </div>
@@ -77,16 +128,6 @@
                             </div>
                         </div>
                     </xsl:for-each>
-
-                    <div class="analysis-footer">
-                        <h2 style="color:#64ffda;">📊 Python NLTK Analysis (Word Frequency)</h2>
-                        <table>
-                            <tr><th>Keyword</th><th>Frequency</th><th>Symbolism</th></tr>
-                            <tr><td>Su (Water)</td><td>15</td><td>Purity &amp; Life</td></tr>
-                            <tr><td>Gül (Rose)</td><td>14</td><td>Prophetic Beauty</td></tr>
-                            <tr><td>Bahār (Spring)</td><td>11</td><td>Divine Renewal</td></tr>
-                        </table>
-                    </div>
                 </div>
             </body>
         </html>
