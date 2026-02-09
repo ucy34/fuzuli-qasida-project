@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="[http://www.w3.org/1999/XSL/Transform](http://www.w3.org/1999/XSL/Transform)" xmlns:tei="[http://www.tei-c.org/ns/1.0](http://www.tei-c.org/ns/1.0)" exclude-result-prefixes="tei">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="tei">
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
 
     <xsl:template match="/">
@@ -68,21 +68,21 @@
                     .manuscript-side img { width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid var(--border); }
                     .text-side { flex: 1; padding: 30px; }
 
-                    /* BEYİTLER ARASINDAKİ BOŞLUK (İSTEDİĞİN KISIM) */
+                    /* BEYİT VE MISRA BOŞLUKLARI */
                     .couplet { 
                         margin-bottom: 50px !important; 
-                        padding-bottom: 20px; 
+                        padding-bottom: 25px; 
                         border-bottom: 1px dashed var(--border); 
-                        display: block; 
+                        display: block;
                     }
-                    .couplet:last-child { border-bottom: none; }
-
+                    .couplet:last-child { border-bottom: none; margin-bottom: 0; }
+                    
                     .tr-text, .en-text { display: block; line-height: 1.8; }
                     .tr-text { font-style: italic; font-size: 1.2em; }
-                    .en-text { font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; display: none; }
+                    .en-text { font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; }
                     
                     /* MISRALAR ARASI MESAFE */
-                    .tr-text span, .en-text span { display: block; margin-bottom: 8px; }
+                    .tr-text span, .en-text span { display: block; margin-bottom: 12px; }
 
                     .commentary-box {
                         display: none; margin-top: 15px; padding: 12px;
@@ -118,7 +118,7 @@
                             <label for="aboutToggle" class="close-about">×</label>
                             <h2 style="color:var(--accent); text-align:center;">About This Project</h2>
                             <p>This website was designed by <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong> for Dr. Christian Casey's course.</p>
-                            <p>Manuscript source: <a href="[https://acikarisim.tbmm.gov.tr/](https://acikarisim.tbmm.gov.tr/)" target="_blank" style="color:var(--accent); font-weight:bold;">TBMM Open Access</a>.</p>
+                            <p>Manuscript source: <a href="https://acikarisim.tbmm.gov.tr/" target="_blank" style="color:var(--accent); font-weight:bold;">TBMM Open Access</a>.</p>
                             <hr/>
                             <p><strong>FAQ:</strong> A Kaside is a formal lyric poem. Fuzuli (16th c.) used this form to blend cosmology with divine love.</p>
                         </div>
