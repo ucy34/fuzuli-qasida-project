@@ -77,9 +77,16 @@
                     }
                     .couplet:last-child { border-bottom: none; margin-bottom: 0; }
                     
-                    .tr-text, .en-text { display: block; line-height: 1.8; }
-                    .tr-text { font-style: italic; font-size: 1.2em; }
-                    .en-text { font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; }
+                    .tr-text { display: block; line-height: 1.8; font-style: italic; font-size: 1.2em; }
+                    
+                    /* ÇEVİRİYİ VARSAYILAN OLARAK GİZLE */
+                    .en-text { 
+                        display: none; 
+                        font-size: 1.1em; 
+                        border-left: 5px solid var(--accent); 
+                        padding-left: 20px; 
+                        line-height: 1.8;
+                    }
                     
                     /* MISRALAR ARASI MESAFE */
                     .tr-text span, .en-text span { display: block; margin-bottom: 12px; }
@@ -89,8 +96,11 @@
                         background-color: var(--note-bg); border-left: 4px solid var(--note-border);
                         font-size: 0.9em; font-family: sans-serif;
                     }
+                    
+                    /* DİL DEĞİŞTİRME TETİKLEYİCİSİ */
                     #langToggle:checked ~ .site-wrapper .tr-text { display: none; }
                     #langToggle:checked ~ .site-wrapper .en-text { display: block; }
+                    
                     #noteToggle:checked ~ .site-wrapper .commentary-box { display: block; }
                     .folio-label { font-weight: bold; color: var(--accent); display: block; margin-top: 15px; }
                 </style>
