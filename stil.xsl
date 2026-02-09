@@ -52,8 +52,27 @@
                     }
                     .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
+                    /* ABOUT MODAL TASARIMI */
+                    .about-overlay {
+                        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                        background: rgba(0,0,0,0.85); color: white;
+                        display: none; z-index: 2000; align-items: center; justify-content: center;
+                        backdrop-filter: blur(5px);
+                    }
+                    .about-content {
+                        background: var(--bg-card); color: var(--text-primary);
+                        width: 90%; max-width: 800px; max-height: 85vh; padding: 40px; 
+                        border-radius: 8px; position: relative; overflow-y: auto;
+                        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                    }
+                    .close-about { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--accent); font-weight: bold; }
+                    #aboutToggle:checked ~ .about-overlay { display: flex; }
+
+                    .faq-q { font-weight: bold; color: var(--accent); margin-top: 20px; display: block; }
+                    .faq-a { margin-bottom: 10px; display: block; font-size: 0.95em; line-height: 1.5; }
+
                     /* GİZLİ CHECKBOX'LAR */
-                    #langToggle, #darkToggle, #noteToggle { display: none; }
+                    #langToggle, #darkToggle, #noteToggle, #aboutToggle { display: none; }
 
                     /* BUTON METİN DİNAMİKLERİ */
                     #langToggle:not(:checked) ~ .nav-controls .lang-btn:after { content: "Show English Translation"; }
@@ -79,34 +98,16 @@
                     
                     .text-side { flex: 1; padding: 30px; }
 
-                    /* ARKADAŞININ KODUNDAKİ BOYUTLAR */
-                    .tr-text { 
-                        display: block; 
-                        font-style: italic; 
-                        font-size: 1.2em; 
-                        line-height: 1.6; 
-                    }
+                    .tr-text { display: block; font-style: italic; font-size: 1.2em; line-height: 1.6; }
+                    .en-text { display: none; font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; line-height: 1.6; }
 
-                    .en-text { 
-                        display: none; 
-                        font-size: 1.1em; 
-                        border-left: 5px solid var(--accent); 
-                        padding-left: 20px; 
-                        line-height: 1.6; 
-                    }
-
-                    /* COMMENTARY KUTUSU (BAŞLANGIÇTA GİZLİ) */
                     .commentary-box {
-                        display: none;
-                        margin-top: 15px; padding: 12px;
-                        background-color: var(--note-bg);
-                        border-left: 4px solid var(--note-border);
-                        font-size: 0.9em; font-family: sans-serif;
-                        color: var(--text-primary);
+                        display: none; margin-top: 15px; padding: 12px;
+                        background-color: var(--note-bg); border-left: 4px solid var(--note-border);
+                        font-size: 0.9em; font-family: sans-serif; color: var(--text-primary);
                     }
                     .commentary-label { font-weight: bold; color: var(--note-border); text-transform: uppercase; font-size: 0.8em; display: block; margin-bottom: 5px; }
 
-                    /* GÖSTER/GİZLE MANTIĞI */
                     #langToggle:checked ~ .site-wrapper .tr-text { display: none; }
                     #langToggle:checked ~ .site-wrapper .en-text { display: block; }
                     #noteToggle:checked ~ .site-wrapper .commentary-box { display: block; }
@@ -120,11 +121,35 @@
                 <input type="checkbox" id="langToggle" />
                 <input type="checkbox" id="noteToggle" />
                 <input type="checkbox" id="darkToggle" />
+                <input type="checkbox" id="aboutToggle" />
                 
                 <div class="nav-controls">
+                    <label for="aboutToggle" class="btn">About This Project</label>
                     <label for="langToggle" class="btn lang-btn"></label>
                     <label for="noteToggle" class="btn note-btn"></label>
                     <label for="darkToggle" class="btn dark-btn"></label>
+                </div>
+
+                <div class="about-overlay">
+                    <div class="about-content">
+                        <label for="aboutToggle" class="close-about">×</label>
+                        <h2 style="color:var(--accent); text-align:center; border-bottom: 2px solid var(--accent); padding-bottom: 10px;">About This Project</h2>
+                        
+                        <p>This website was designed by two FU Berlin ISME Students, namely <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong>. It was developed under the final requirement of Dr. Christian Casey's course "Manuscripts and Digital Humanities."</p>
+                        
+                        <p>In this website, one can find three pages from "Külliyat-ı Divan-ı Fuzuli", published in Ottoman Turkish in 1890s, while being originally written in 16th century. The access to the manuscript is via TBMM (Turkish National Grand Assembly) Archives, which can be found through this link: <a href="https://acikarisim.tbmm.gov.tr/" target="_blank" style="color:var(--accent); text-decoration: none; font-weight: bold;">TBMM Open Access</a>.</p>
+                        
+                        <h3 style="color:var(--accent); margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px;">FAQ</h3>
+                        
+                        <span class="faq-q">1. What is Divan Literature?</span>
+                        <span class="faq-a">Divan literature is the classical tradition of Ottoman poetry and prose that flourished between the 13th and 19th centuries, heavily shaped by Islamic culture and Persian and Arabic literary models.</span>
+                        
+                        <span class="faq-q">2. What is a Kaside?</span>
+                        <span class="faq-a">A kaside is a long, formal lyric poem, typically ranging from 33 to 99 couplets. The specific poem we translated functions as both a bahâriye and a tevhid, where the poet uses themes of cosmology, Islamic law (fiqh), and logic to illustrate that the harmony found in nature is undeniable proof of a single, omnipotent Creator.</span>
+                        
+                        <span class="faq-q">3. Who is Fuzuli?</span>
+                        <span class="faq-a">Fuzuli was a 16th-century poet and one of the greatest masters of the Divan tradition, renowned for his profound emotional depth and masters of divine love.</span>
+                    </div>
                 </div>
 
                 <div class="site-wrapper">
@@ -149,7 +174,7 @@
                                         </div>
                                         
                                         <div class="en-text">
-                                            <xsl:value-of select="tei:note[@type='translation']"/>
+                                            <xsl:value-of select="tei:note[@type='translation'] | tei:quote"/>
                                         </div>
 
                                         <xsl:if test="tei:note[@type='commentary']">
@@ -168,4 +193,3 @@
         </html>
     </xsl:template>
 </xsl:stylesheet>
-
