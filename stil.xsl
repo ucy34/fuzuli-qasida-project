@@ -13,7 +13,6 @@
                         --note-bg: #f9f9f9; --note-border: #3498db;
                     }
 
-                    /* DARK MODE ÇEKİRDEK AYARI */
                     #darkToggle:checked ~ .site-wrapper {
                         --bg-main: #121212 !important;
                         --bg-card: #1e1e1e !important;
@@ -36,7 +35,6 @@
                     }
                     .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-                    /* MODAL SİSTEMİ */
                     .about-overlay {
                         position: fixed; top: 0; left: 0; width: 100%; height: 100%;
                         background: rgba(0,0,0,0.85); display: none; z-index: 9999; 
@@ -49,7 +47,6 @@
                     }
                     .close-about { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--accent); font-weight: bold; }
                     
-                    /* TETİKLEYİCİLER */
                     #aboutToggle:checked ~ .site-wrapper .about-overlay { display: flex !important; }
                     #langToggle, #darkToggle, #noteToggle, #aboutToggle { display: none; }
 
@@ -70,8 +67,22 @@
                     .manuscript-side { flex: 1; padding: 10px; border-right: 1px solid var(--border); text-align: center; }
                     .manuscript-side img { width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid var(--border); }
                     .text-side { flex: 1; padding: 30px; }
-                    .tr-text { display: block; font-style: italic; font-size: 1.2em; line-height: 1.6; }
-                    .en-text { display: none; font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; line-height: 1.6; }
+
+                    /* BEYİT VE MISRA BOŞLUKLARI */
+                    .couplet { 
+                        margin-bottom: 45px !important; 
+                        padding-bottom: 20px; 
+                        border-bottom: 1px dashed var(--border); 
+                        display: block;
+                    }
+                    .couplet:last-child { border-bottom: none; margin-bottom: 0; }
+                    
+                    .tr-text, .en-text { display: block; line-height: 1.8; }
+                    .tr-text { font-style: italic; font-size: 1.2em; }
+                    .en-text { font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; }
+                    
+                    /* MISRALAR ARASI MESAFE */
+                    .tr-text span, .en-text span { display: block; margin-bottom: 10px; }
 
                     .commentary-box {
                         display: none; margin-top: 15px; padding: 12px;
@@ -124,11 +135,11 @@
                                     <div class="couplet">
                                         <div class="tr-text">
                                             <xsl:for-each select="tei:l">
-                                                <span style="display:block;"><xsl:value-of select="."/></span>
+                                                <span><xsl:value-of select="."/></span>
                                             </xsl:for-each>
                                         </div>
                                         <div class="en-text">
-                                            <xsl:value-of select="tei:note[@type='translation'] | tei:quote"/>
+                                            <span><xsl:value-of select="tei:note[@type='translation'] | tei:quote"/></span>
                                         </div>
                                         <xsl:if test="tei:note[@type='commentary']">
                                             <div class="commentary-box">
@@ -146,3 +157,4 @@
         </html>
     </xsl:template>
 </xsl:stylesheet>
+``` [cite: 1, 61]
