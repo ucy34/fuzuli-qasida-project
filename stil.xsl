@@ -38,6 +38,7 @@
 
                     .site-wrapper { min-height: 100vh; padding: 20px; color: var(--text-primary); }
 
+                    /* KONTROL PANELİ (SAĞ ÜST) */
                     .nav-controls {
                         position: fixed; top: 20px; right: 20px; z-index: 1000;
                         display: flex; flex-direction: column; gap: 10px;
@@ -51,13 +52,18 @@
                     }
                     .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-                    #langToggle, #darkToggle { display: none; }
+                    /* GİZLİ CHECKBOX'LAR */
+                    #langToggle, #darkToggle, #noteToggle { display: none; }
 
+                    /* BUTON METİN DİNAMİKLERİ */
                     #langToggle:not(:checked) ~ .nav-controls .lang-btn:after { content: "Show English Translation"; }
                     #langToggle:checked ~ .nav-controls .lang-btn:after { content: "Show Turkish Transcription"; }
                     
-                    #darkToggle:not(:checked) ~ .nav-controls .dark-btn:after { content: "🌙 Enable Dark Mode"; }
-                    #darkToggle:checked ~ .nav-controls .dark-btn:after { content: "☀️ Enable Light Mode"; }
+                    #noteToggle:not(:checked) ~ .nav-controls .note-btn:after { content: "Show Scholarly Notes"; }
+                    #noteToggle:checked ~ .nav-controls .note-btn:after { content: "Hide Scholarly Notes"; }
+
+                    #darkToggle:not(:checked) ~ .nav-controls .dark-btn:after { content: "🌙 Dark Mode"; }
+                    #darkToggle:checked ~ .nav-controls .dark-btn:after { content: "☀️ Light Mode"; }
 
                     .header-section { text-align: center; border-bottom: 3px double var(--accent); margin-bottom: 40px; padding: 20px; }
                     
@@ -73,24 +79,25 @@
                     
                     .text-side { flex: 1; padding: 30px; }
 
-                    /* ARKADAŞININ KODUNDAKİ BOYUTLAR UYGULANDI */
+                    /* ARKADAŞININ KODUNDAKİ BOYUTLAR */
                     .tr-text { 
                         display: block; 
                         font-style: italic; 
-                        font-size: 1.2em; /* Arkadaşının kodu: 1.2em */
-                        line-height: 1.6; /* Arkadaşının kodu: 1.6 */
+                        font-size: 1.2em; 
+                        line-height: 1.6; 
                     }
 
                     .en-text { 
                         display: none; 
-                        font-size: 1.1em; /* Arkadaşının kodu: 1.1em */
+                        font-size: 1.1em; 
                         border-left: 5px solid var(--accent); 
                         padding-left: 20px; 
                         line-height: 1.6; 
                     }
 
-                    /* Akademik Not (Commentary) Kutusu */
+                    /* COMMENTARY KUTUSU (BAŞLANGIÇTA GİZLİ) */
                     .commentary-box {
+                        display: none;
                         margin-top: 15px; padding: 12px;
                         background-color: var(--note-bg);
                         border-left: 4px solid var(--note-border);
@@ -99,8 +106,10 @@
                     }
                     .commentary-label { font-weight: bold; color: var(--note-border); text-transform: uppercase; font-size: 0.8em; display: block; margin-bottom: 5px; }
 
+                    /* GÖSTER/GİZLE MANTIĞI */
                     #langToggle:checked ~ .site-wrapper .tr-text { display: none; }
                     #langToggle:checked ~ .site-wrapper .en-text { display: block; }
+                    #noteToggle:checked ~ .site-wrapper .commentary-box { display: block; }
 
                     .couplet { margin-bottom: 45px; border-bottom: 1px dashed var(--border); padding-bottom: 20px; }
                     .couplet:last-child { border-bottom: none; }
@@ -109,10 +118,12 @@
             </head>
             <body>
                 <input type="checkbox" id="langToggle" />
+                <input type="checkbox" id="noteToggle" />
                 <input type="checkbox" id="darkToggle" />
                 
                 <div class="nav-controls">
                     <label for="langToggle" class="btn lang-btn"></label>
+                    <label for="noteToggle" class="btn note-btn"></label>
                     <label for="darkToggle" class="btn dark-btn"></label>
                 </div>
 
