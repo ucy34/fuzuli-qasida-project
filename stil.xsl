@@ -129,7 +129,7 @@
 
                 <div class="site-wrapper">
                     <div class="header-section">
-                        <h1 style="color: var(--accent);">Kasîde-i Fuzûlî</h1>
+                        <h1 style="color: var(--accent);">Kasîde</h1>
                         <p>Digital Humanities Edition | Mehmet Eray Avcı &amp; Uğur Can Yıldız</p>
                     </div>
 
@@ -168,3 +168,4 @@
         </html>
     </xsl:template>
 </xsl:stylesheet>
+
