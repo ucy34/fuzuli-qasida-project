@@ -68,7 +68,6 @@
                     .manuscript-side img { width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid var(--border); }
                     .text-side { flex: 1; padding: 30px; }
 
-                    /* BEYİT VE MISRA BOŞLUKLARI */
                     .couplet { 
                         margin-bottom: 45px !important; 
                         padding-bottom: 20px; 
@@ -81,7 +80,6 @@
                     .tr-text { font-style: italic; font-size: 1.2em; }
                     .en-text { font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; }
                     
-                    /* MISRALAR ARASI MESAFE */
                     .tr-text span, .en-text span { display: block; margin-bottom: 10px; }
 
                     .commentary-box {
