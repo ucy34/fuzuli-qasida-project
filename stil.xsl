@@ -12,25 +12,38 @@
                     .header { text-align: center; padding: 40px; border-bottom: 2px solid #64ffda; margin-bottom: 40px; }
                     h1 { color: #64ffda; margin: 0; font-size: 2.5em; }
                     
-                    /* Sayfa ve Metin Düzeni */
-                    .page-wrapper { display: flex; gap: 30px; background: #112240; margin-bottom: 50px; padding: 25px; border-radius: 15px; border: 1px solid #233554; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-                    .facsimile { flex: 1; text-align: center; }
-                    .facsimile img { width: 100%; border-radius: 8px; border: 1px solid #64ffda; }
+                    /* GİZLE/GÖSTER MEKANİZMASI (Checkbox Hack) */
+                    #transToggle { display: none; }
+                    .toggle-btn {
+                        position: fixed; top: 20px; right: 20px; z-index: 1000;
+                        background: #64ffda; color: #0a192f; padding: 12px 25px;
+                        border-radius: 30px; cursor: pointer; font-weight: bold;
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s;
+                    }
+                    .toggle-btn:hover { transform: scale(1.05); background: #fff; }
                     
-                    .transcription { flex: 1.2; }
-                    .couplet { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #233554; }
-                    .ota { font-size: 1.3em; color: #ccd6f6; line-height: 1.7; margin-bottom: 12px; font-style: italic; }
-                    
-                    /* İngilizce Çeviri Alanı */
+                    /* Çeviriler Başlangıçta Gizli */
                     .translation { 
-                        display: block; 
-                        background: rgba(100, 255, 218, 0.1); 
+                        display: none; 
+                        background: rgba(100, 255, 218, 0.07); 
                         padding: 15px; 
                         border-radius: 8px; 
                         border-left: 4px solid #64ffda;
                         color: #8892b0;
-                        font-size: 1em;
+                        margin-top: 15px;
                     }
+
+                    /* Butona basılınca (checkbox seçilince) çevirileri göster */
+                    #transToggle:checked ~ .container .translation { display: block; }
+                    #transToggle:checked ~ .toggle-btn { background: #ff4d4d; color: white; }
+
+                    /* Sayfa Yapısı */
+                    .page-wrapper { display: flex; gap: 30px; background: #112240; margin-bottom: 50px; padding: 25px; border-radius: 15px; border: 1px solid #233554; }
+                    .facsimile { flex: 1; text-align: center; }
+                    .facsimile img { width: 100%; border-radius: 8px; border: 1px solid #64ffda; }
+                    .transcription { flex: 1.2; }
+                    .couplet { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #233554; }
+                    .ota { font-size: 1.3em; color: #ccd6f6; line-height: 1.7; font-style: italic; }
                     .trans-label { color: #64ffda; font-weight: bold; font-size: 0.8em; text-transform: uppercase; display: block; margin-bottom: 5px; }
                     
                     .analysis-footer { background: #112240; padding: 30px; border-radius: 15px; border-top: 4px solid #64ffda; margin-top: 50px; }
@@ -40,10 +53,13 @@
                 </style>
             </head>
             <body>
+                <input type="checkbox" id="transToggle" />
+                <label for="transToggle" class="toggle-btn">🌐 Toggle English</label>
+
                 <div class="container">
                     <div class="header">
                         <h1>Fuzûlî: Bahar Kasîdesi</h1>
-                        <p>Digital TEI Edition | Analysis by Eray Avcı &amp; Ugurcan Yildiz</p>
+                        <p>Digital TEI Edition | Python-Aided Textual Analysis</p>
                     </div>
 
                     <xsl:for-each select="//tei:pb">
@@ -71,13 +87,12 @@
                     </xsl:for-each>
 
                     <div class="analysis-footer">
-                        <h2 style="color:#64ffda;">📊 Textual Analysis (NLTK Insights)</h2>
-                        <p>Metin içi kavram frekansları ve dijital analiz sonuçları:</p>
+                        <h2 style="color:#64ffda;">📊 Textual Analysis (Python NLTK Sonuçları)</h2>
                         <table>
                             <tr><th>Kavram</th><th>Frekans</th><th>Sembolizm</th></tr>
-                            <tr><td>Gül (Rose)</td><td>14</td><td>Kaside türünde memduh (övülen) kişiyi temsil eder.</td></tr>
-                            <tr><td>Bahār (Spring)</td><td>11</td><td>Yenilenme ve edebi canlılık teması.</td></tr>
-                            <tr><td>Şebnem (Dew)</td><td>8</td><td>Saflık ve ilahi rahmetin yansıması.</td></tr>
+                            <tr><td>Gül (Rose)</td><td>14</td><td>Memduh / Hz. Muhammed (SAV)</td></tr>
+                            <tr><td>Bahār (Spring)</td><td>11</td><td>İlahi Tecelli ve Canlanma</td></tr>
+                            <tr><td>Su (Water)</td><td>15</td><td>Saflık ve Cömertlik</td></tr>
                         </table>
                     </div>
                 </div>
