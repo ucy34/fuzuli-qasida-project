@@ -73,9 +73,21 @@
                     
                     .text-side { flex: 1; padding: 30px; }
 
-                    /* DİL VE NOT TASARIMI */
-                    .tr-text { display: block; font-style: italic; font-size: 1.3em; line-height: 1.8; }
-                    .en-text { display: none; font-size: 1.2em; border-left: 5px solid var(--accent); padding-left: 20px; line-height: 1.7; }
+                    /* ARKADAŞININ KODUNDAKİ BOYUTLAR UYGULANDI */
+                    .tr-text { 
+                        display: block; 
+                        font-style: italic; 
+                        font-size: 1.2em; /* Arkadaşının kodu: 1.2em */
+                        line-height: 1.6; /* Arkadaşının kodu: 1.6 */
+                    }
+
+                    .en-text { 
+                        display: none; 
+                        font-size: 1.1em; /* Arkadaşının kodu: 1.1em */
+                        border-left: 5px solid var(--accent); 
+                        padding-left: 20px; 
+                        line-height: 1.6; 
+                    }
 
                     /* Akademik Not (Commentary) Kutusu */
                     .commentary-box {
