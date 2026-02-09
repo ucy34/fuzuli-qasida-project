@@ -38,14 +38,17 @@
 
                     .site-wrapper { min-height: 100vh; padding: 20px; color: var(--text-primary); }
 
-                    /* KONTROL PANELİ (SAĞ ÜST) */
+                    /* YENİ BUTON YERLEŞİMİ (İSİMLERİN ALTINDA YAN YANA) */
                     .nav-controls {
-                        position: fixed; top: 20px; right: 20px; z-index: 1000;
-                        display: flex; flex-direction: column; gap: 10px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        gap: 15px;
+                        margin-top: 25px;
                     }
 
                     .btn {
-                        background: var(--accent); color: white; padding: 12px 20px; 
+                        background: var(--accent); color: white; padding: 10px 18px; 
                         border-radius: 4px; box-shadow: 0 4px 6px var(--shadow); 
                         font-weight: bold; cursor: pointer; font-size: 13px; text-align: center;
                         user-select: none; border: none; transition: 0.2s;
@@ -74,15 +77,15 @@
                     /* GİZLİ CHECKBOX'LAR */
                     #langToggle, #darkToggle, #noteToggle, #aboutToggle { display: none; }
 
-                    /* BUTON METİN DİNAMİKLERİ */
-                    #langToggle:not(:checked) ~ .nav-controls .lang-btn:after { content: "Show English Translation"; }
-                    #langToggle:checked ~ .nav-controls .lang-btn:after { content: "Show Turkish Transcription"; }
+                    /* BUTON METİN DİNAMİKLERİ (Tıklanabilir etiketlerin içine text ekler) */
+                    #langToggle:not(:checked) ~ .site-wrapper .lang-btn:after { content: "Show English Translation"; }
+                    #langToggle:checked ~ .site-wrapper .lang-btn:after { content: "Show Turkish Transcription"; }
                     
-                    #noteToggle:not(:checked) ~ .nav-controls .note-btn:after { content: "Show Scholarly Notes"; }
-                    #noteToggle:checked ~ .nav-controls .note-btn:after { content: "Hide Scholarly Notes"; }
+                    #noteToggle:not(:checked) ~ .site-wrapper .note-btn:after { content: "Show Scholarly Notes"; }
+                    #noteToggle:checked ~ .site-wrapper .note-btn:after { content: "Hide Scholarly Notes"; }
 
-                    #darkToggle:not(:checked) ~ .nav-controls .dark-btn:after { content: "🌙 Dark Mode"; }
-                    #darkToggle:checked ~ .nav-controls .dark-btn:after { content: "☀️ Light Mode"; }
+                    #darkToggle:not(:checked) ~ .site-wrapper .dark-btn:after { content: "🌙 Dark Mode"; }
+                    #darkToggle:checked ~ .site-wrapper .dark-btn:after { content: "☀️ Light Mode"; }
 
                     .header-section { text-align: center; border-bottom: 3px double var(--accent); margin-bottom: 40px; padding: 20px; }
                     
@@ -123,39 +126,33 @@
                 <input type="checkbox" id="darkToggle" />
                 <input type="checkbox" id="aboutToggle" />
                 
-                <div class="nav-controls">
-                    <label for="aboutToggle" class="btn">About This Project</label>
-                    <label for="langToggle" class="btn lang-btn"></label>
-                    <label for="noteToggle" class="btn note-btn"></label>
-                    <label for="darkToggle" class="btn dark-btn"></label>
-                </div>
-
-                <div class="about-overlay">
-                    <div class="about-content">
-                        <label for="aboutToggle" class="close-about">×</label>
-                        <h2 style="color:var(--accent); text-align:center; border-bottom: 2px solid var(--accent); padding-bottom: 10px;">About This Project</h2>
-                        
-                        <p>This website was designed by two FU Berlin ISME Students, namely <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong>. It was developed under the final requirement of Dr. Christian Casey's course "Manuscripts and Digital Humanities."</p>
-                        
-                        <p>In this website, one can find three pages from "Külliyat-ı Divan-ı Fuzuli", published in Ottoman Turkish in 1890s, while being originally written in 16th century. The access to the manuscript is via TBMM (Turkish National Grand Assembly) Archives, which can be found through this link: <a href="https://acikarisim.tbmm.gov.tr/" target="_blank" style="color:var(--accent); text-decoration: none; font-weight: bold;">TBMM Open Access</a>.</p>
-                        
-                        <h3 style="color:var(--accent); margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px;">FAQ</h3>
-                        
-                        <span class="faq-q">1. What is Divan Literature?</span>
-                        <span class="faq-a">Divan literature is the classical tradition of Ottoman poetry and prose that flourished between the 13th and 19th centuries, heavily shaped by Islamic culture and Persian and Arabic literary models.</span>
-                        
-                        <span class="faq-q">2. What is a Kaside?</span>
-                        <span class="faq-a">A kaside is a long, formal lyric poem, typically ranging from 33 to 99 couplets. The specific poem we translated functions as both a bahâriye and a tevhid, where the poet uses themes of cosmology, Islamic law (fiqh), and logic to illustrate that the harmony found in nature is undeniable proof of a single, omnipotent Creator.</span>
-                        
-                        <span class="faq-q">3. Who is Fuzuli?</span>
-                        <span class="faq-a">Fuzuli was a 16th-century poet and one of the greatest masters of the Divan tradition, renowned for his profound emotional depth and masters of divine love.</span>
-                    </div>
-                </div>
-
                 <div class="site-wrapper">
                     <div class="header-section">
                         <h1 style="color: var(--accent);">Kasîde</h1>
                         <p>Digital Humanities Edition | Mehmet Eray Avcı &amp; Uğur Can Yıldız</p>
+                        
+                        <div class="nav-controls">
+                            <label for="aboutToggle" class="btn">About This Project</label>
+                            <label for="langToggle" class="btn lang-btn"></label>
+                            <label for="noteToggle" class="btn note-btn"></label>
+                            <label for="darkToggle" class="btn dark-btn"></label>
+                        </div>
+                    </div>
+
+                    <div class="about-overlay">
+                        <div class="about-content">
+                            <label for="aboutToggle" class="close-about">×</label>
+                            <h2 style="color:var(--accent); text-align:center; border-bottom: 2px solid var(--accent); padding-bottom: 10px;">About This Project</h2>
+                            <p>This website was designed by two FU Berlin ISME Students, namely <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong>. It was developed under the final requirement of Dr. Christian Casey's course "Manuscripts and Digital Humanities."</p>
+                            <p>In this website, one can find three pages from "Külliyat-ı Divan-ı Fuzuli", published in Ottoman Turkish in 1890s, while being originally written in 16th century. The access to the manuscript is via TBMM (Turkish National Grand Assembly) Archives, which can be found through this link: <a href="https://acikarisim.tbmm.gov.tr/" target="_blank" style="color:var(--accent); text-decoration: none; font-weight: bold;">TBMM Open Access</a>.</p>
+                            <h3 style="color:var(--accent); margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px;">FAQ</h3>
+                            <span class="faq-q">1. What is Divan Literature?</span>
+                            <span class="faq-a">Divan literature is the classical tradition of Ottoman poetry and prose that flourished between the 13th and 19th centuries, heavily shaped by Islamic culture and Persian and Arabic literary models.</span>
+                            <span class="faq-q">2. What is a Kaside?</span>
+                            <span class="faq-a">A kaside is a long, formal lyric poem, typically ranging from 33 to 99 couplets. The specific poem we translated functions as both a bahâriye and a tevhid, where the poet uses themes of cosmology, Islamic law (fiqh), and logic to illustrate that the harmony found in nature is undeniable proof of a single, omnipotent Creator.</span>
+                            <span class="faq-q">3. Who is Fuzuli?</span>
+                            <span class="faq-a">Fuzuli was a 16th-century poet and one of the greatest masters of the Divan tradition, renowned for his profound emotional depth and masters of divine love.</span>
+                        </div>
                     </div>
 
                     <xsl:for-each select="//tei:pb">
@@ -172,11 +169,9 @@
                                                 <span style="display:block;"><xsl:value-of select="."/></span>
                                             </xsl:for-each>
                                         </div>
-                                        
                                         <div class="en-text">
                                             <xsl:value-of select="tei:note[@type='translation'] | tei:quote"/>
                                         </div>
-
                                         <xsl:if test="tei:note[@type='commentary']">
                                             <div class="commentary-box">
                                                 <span class="commentary-label">Scholarly Commentary</span>
