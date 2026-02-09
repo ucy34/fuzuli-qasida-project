@@ -17,28 +17,27 @@
                         position: fixed; top: 20px; right: 20px; z-index: 1000;
                         background: #64ffda; color: #0a192f; padding: 12px 25px;
                         border-radius: 30px; cursor: pointer; font-weight: bold;
-                        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: 0.3s;
                     }
+                    .toggle-btn:hover { background: #fff; transform: scale(1.05); }
 
-                    /* VARSAYILAN DURUM: Osmanlıca Açık, İngilizce Gizli */
+                    /* BUTON METNİ DEĞİŞİMİ */
+                    #langToggle:not(:checked) ~ .toggle-btn:after { content: "Show English Translation"; }
+                    #langToggle:checked ~ .toggle-btn:after { content: "Show Turkish Transcription"; }
+
+                    /* METİN GİZLEME/GÖSTERME MANTIĞI */
                     .translation { display: none; color: #64ffda; font-size: 1.2em; font-style: italic; line-height: 1.7; }
                     .ota { display: block; font-size: 1.3em; color: #ccd6f6; line-height: 1.7; }
 
-                    /* BUTONA BASILINCA: Osmanlıca Gizle, İngilizce Göster */
                     #langToggle:checked ~ .container .ota { display: none; }
                     #langToggle:checked ~ .container .translation { display: block; }
-                    
-                    /* Buton Metni Değişimi (Opsiyonel görsel geri bildirim) */
-                    #langToggle:checked ~ .toggle-btn { background: #ccd6f6; }
-                    #langToggle:checked ~ .toggle-btn:after { content: " (Switch to TR)"; }
-                    #langToggle:not(:checked) ~ .toggle-btn:after { content: " (Switch to EN)"; }
 
                     /* Sayfa Yapısı */
-                    .page-wrapper { display: flex; gap: 30px; background: #112240; margin-bottom: 50px; padding: 25px; border-radius: 15px; border: 1px solid #233554; align-items: flex-start; }
+                    .page-wrapper { display: flex; gap: 30px; background: #112240; margin-bottom: 50px; padding: 25px; border-radius: 15px; border: 1px solid #233554; }
                     .facsimile { flex: 1; text-align: center; }
                     .facsimile img { width: 100%; border-radius: 8px; border: 1px solid #64ffda; }
-                    .transcription { flex: 1.2; padding-top: 20px; }
-                    .couplet { margin-bottom: 30px; min-height: 100px; }
+                    .transcription { flex: 1.2; padding-top: 10px; }
+                    .couplet { margin-bottom: 35px; min-height: 80px; padding-left: 15px; border-left: 2px solid rgba(100, 255, 218, 0.2); }
                     
                     .analysis-footer { background: #112240; padding: 30px; border-radius: 15px; border-top: 4px solid #64ffda; margin-top: 50px; }
                     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
@@ -48,7 +47,7 @@
             </head>
             <body>
                 <input type="checkbox" id="langToggle" />
-                <label for="langToggle" class="toggle-btn">🌐 Language</label>
+                <label for="langToggle" class="toggle-btn">🌐 </label>
 
                 <div class="container">
                     <div class="header">
@@ -80,12 +79,12 @@
                     </xsl:for-each>
 
                     <div class="analysis-footer">
-                        <h2 style="color:#64ffda;">📊 Python NLTK Analysis Results</h2>
+                        <h2 style="color:#64ffda;">📊 Python NLTK Analysis (Word Frequency)</h2>
                         <table>
-                            <tr><th>Keyword</th><th>Frequency</th><th>Contextual Value</th></tr>
-                            <tr><td>Su (Water)</td><td>15</td><td>Central Motif / Purity</td></tr>
-                            <tr><td>Gül (Rose)</td><td>14</td><td>Prophetic Symbolism</td></tr>
-                            <tr><td>Bahār (Spring)</td><td>11</td><td>Divine Manifestation</td></tr>
+                            <tr><th>Keyword</th><th>Frequency</th><th>Symbolism</th></tr>
+                            <tr><td>Su (Water)</td><td>15</td><td>Purity &amp; Life</td></tr>
+                            <tr><td>Gül (Rose)</td><td>14</td><td>Prophetic Beauty</td></tr>
+                            <tr><td>Bahār (Spring)</td><td>11</td><td>Divine Renewal</td></tr>
                         </table>
                     </div>
                 </div>
