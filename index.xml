@@ -37,6 +37,7 @@
                <l n="a">Yazıldı sebze-yi nev-ḫīzden ḫaṭṭ-ı aḥkām</l>
                <l n="b">Çekildi sāye-yi maṭbū‘-ı servden ṭuğrā</l>
                <note type="translation" xml:lang="en">The decree of laws was written by the newly sprouted greenery, and the royal seal (tughra) was drawn by the graceful shadow of the cypress.</note>
+               <note type="commentary">Metaphorical use of Ottoman bureaucratic terminology ("hatt-ı ahkam", "tughra") to describe nature.</note>
             </lg>
             <lg n="4" type="couplet">
                <l n="a">Şarīr-i āb-ı revān u ṣafīr-i murġ-ı çemen</l>
@@ -87,6 +88,7 @@
                <l n="a">Bahār tāciri mışr-ı çemen ġanīlerine</l>
                <l n="b">Bıraḫdı Yūsuf-ı gül ‘arż eyleyüp ġavġā</l>
                <note type="translation" xml:lang="en">The merchant of Spring left the "Joseph of the Rose" to the wealthy of the Meadow-Egypt, causing a great stir.</note>
+               <note type="commentary">Reference to the Quranic story of Joseph (Yusuf) and Egypt (Misr).</note>
             </lg>
          </div>
 
@@ -106,6 +108,7 @@
                <l n="a">Müzeyyen eyledi evrāḳ-ı lāleyi şebnem</l>
                <l n="b">Ḥurūf-ı lālede olmaz egerçi noḳṭa revā</l>
                <note type="translation" xml:lang="en">The dew adorned the leaves of the tulip, even though dots are not permissible on the letters of the "tulip" (in calligraphy).</note>
+               <note type="commentary">Calligraphic allusion: The word 'Lale' (Tulip) in Arabic script does not contain dotted letters.</note>
             </lg>
             <lg n="17" type="couplet">
                <l n="a">Götürdi şebnemi ezhārdan ḥarāret-i mihr</l>
@@ -127,10 +130,11 @@
                <l n="b">Şebāt-ı ḥāl ile anlerden oldı müsteşnā</l>
                <note type="translation" xml:lang="en">Except for the peerless sapling of the cypress, which, remaining fixed, was excluded from them by its steadfastness.</note>
             </lg>
-            <lg n="21" type="couplet">
+           <lg n="21" type="couplet">
                <l n="a">Şadā-yı seyl çeker medd-i muttaṣıl ya‘nī</l>
                <l n="b">Ki medd-i muttaṣıl ile olur ḳırā’at-ı mā</l>
                <note type="translation" xml:lang="en">The sound of the flood draws a "continuous extension"; that is, the recitation of "Water" occurs with that continuous extension.</note>
+               <note type="commentary">Linguistic and Tajwid allusion: "Medd-i muttasıl" is a rule of Quranic recitation regarding vowel extension.</note>
             </lg>
             <lg n="22" type="couplet">
                <l n="a">Görindi hey’et-i āb-ı revānda şekl-i ḥabāb</l>
@@ -141,6 +145,7 @@
                <l n="a">Ḥuṭūṭ-ı muḫtelif ü müstaḳīmi enhāruñ</l>
                <l n="b">Çemende ṣaldı zevāyā-yı gūne gūne binā</l>
                <note type="translation" xml:lang="en">The various and straight lines of the rivers built diverse corners in the meadow.</note>
+               <note type="commentary">Geometry metaphor: Rivers are likened to lines (hutut) and angles (zevaya) in a architectural layout.</note>
             </lg>
             <lg n="24" type="couplet">
                <l n="a">Ri‘āyet-i ṭuruḳ-ı müstaḳīmden nėçe kim</l>
@@ -148,7 +153,7 @@
                <note type="translation" xml:lang="en">Just as by following the straight paths, one attains the stations of the Paradise of Abode.</note>
             </lg>
             <lg n="25" type="couplet">
-               <l n="a">Hevā-yı bāġdan étdüm bu ḥikmeti ma‘lūm</l>
+               <l n="a">Hevâ-yı bāġdan étdüm bu ḥikmeti ma‘lūm</l>
                <l n="b">Ki i‘tidāldedür ṣıḥḥat-ı ḥavāss u ḳuvā</l>
                <note type="translation" xml:lang="en">From the air of the garden, I have learned this wisdom: that the health of senses and faculties lies in moderation.</note>
             </lg>
@@ -156,6 +161,7 @@
                <l n="a">Bahār gülşeni ezhārla görüp memlū</l>
                <l n="b">Yaḳīnüm oldı ki mümkün degül vücūd-ı ḫalā</l>
                <note type="translation" xml:lang="en">Seeing the garden of spring filled with blossoms, I became certain that a vacuum in existence is impossible.</note>
+               <note type="commentary">Natural philosophy: A reference to the ancient debate on "horror vacui" (nature abhors a vacuum).</note>
             </lg>
             <lg n="27" type="couplet">
                <l n="a">Naẓarda olmaġ ile ṣubḥ u şām ġonce vü gül</l>
@@ -166,6 +172,7 @@
                <l n="a">Netīce sālibe olmaḳ ḫilāf-ı ‘ādetdür</l>
                <l n="b">Olınca mūcib-i ṣuġrāya müttefiḳ kübrā</l>
                <note type="translation" xml:lang="en">It is contrary to the norm for the conclusion to be negative when the major premise agrees with the affirmative minor premise.</note>
+               <note type="commentary">Aristotelian Logic: Reference to the structure of syllogisms (Sughra, Kubra, Natica).</note>
             </lg>
             <lg n="29" type="couplet">
                <l n="a">Żamīr-i gül-büne gül rengi ṣaldı āteş-i bīm</l>
@@ -181,11 +188,13 @@
                <l n="a">Bu kīmiyā sebebinden ‘aceb midür olsa</l>
                <l n="b">Elinde dāne-yi erzen meşābesinde ṭılā</l>
                <note type="translation" xml:lang="en">Because of this alchemy, is it a wonder if gold, in his hand, becomes like a grain of millet?</note>
+               <note type="commentary">Alchemy allusion: The poet contrasts spiritual value with material gold.</note>
             </lg>
             <lg n="32" type="couplet">
                <l n="a">Şükūfe sīmine farż eyledi ḫurūc-ı zekāt</l>
                <l n="b">Medār-ı ḥavl u bülūġ niṣāb ü istinmā</l>
                <note type="translation" xml:lang="en">He made the distribution of alms obligatory upon the silver of the blossoms; based on the criteria of the passing year, maturity, and growth.</note>
+               <note type="commentary">Islamic Jurisprudence (Fiqh): Allusion to the conditions of Zakat (wealth tax).</note>
             </lg>
             <lg n="33" type="couplet">
                <l n="a">Ḥuṭūṭ-ı muḫtelif ü müstaḳīmi enhāruñ</l>
@@ -201,6 +210,7 @@
                <l n="a">Boyandı ḳanı ile ṣafḥa-yı çemen gül gül</l>
                <l n="b">Meger ki faṣlına ḥükm eylemiş ṭabīb-i hevā</l>
                <note type="translation" xml:lang="en">The page of the meadow was stained rose-red with its blood; perhaps the physician of the air ordered a bloodletting.</note>
+               <note type="commentary">Traditional Medicine: "Fasl" refers to the medical practice of phlebotomy (bloodletting).</note>
             </lg>
             <lg n="36" type="couplet">
                <l n="a">Ḥibāl-i siḥre dönüp cünbiş-i cedāvil-i āb</l>
@@ -235,11 +245,13 @@
                <l n="a">Şanup şükūfe mebādī ṣunūf-ı eşcārı</l>
                <l n="b">Ḳılurdı baḥş ki cā’iz ta‘addüd-i ḳudemā</l>
                <note type="translation" xml:lang="en">Regarding the blossoms as the principles of the classes of trees, they were debating that the multiplicity of "eternal beings" is permissible.</note>
+               <note type="commentary">Theological-Philosophy: A debate on the nature of 'eternal beings' (Qudema) and the First Cause.</note>
             </lg>
             <lg n="42" type="couplet">
                <l n="a">Vėrüp teselsüle ḳuvvet ṭabī‘at-ı kec-i āb</l>
                <l n="b">Olurdı nāfī-yi is̱bāt-ı ‘illet-i ūlā</l>
                <note type="translation" xml:lang="en">The crooked nature of the water, giving strength to infinite regression, was denying the proof of the "First Cause."</note>
+               <note type="commentary">Philosophy: "Illet-i Ula" refers to the Aristotelian First Cause.</note>
             </lg>
             <lg n="43" type="couplet">
                <l n="a">Ḫayāl-i maḥż şanup kāyinātı nergis-i mest</l>
@@ -256,7 +268,7 @@
                <l n="b">Dédi ey cemā‘at-ı perīşān rāh-ı hüdāya gel</l>
                <note type="translation" xml:lang="en">The breeze became aware of that corruption and forbade it, saying: "O scattered crowd, hold to the path of guidance!"</note>
             </lg>
-            <lg n="46" type="couplet">
+           <lg n="46" type="couplet">
                <l n="a">Bu kār-ḫāne degül bī-üstad u bī-ṣāni‘</l>
                <l n="b">Lāzım gelür bir ḥakīm-i ḳādir-i pür-iḳtidār</l>
                <note type="translation" xml:lang="en">This workshop is not empty of a master; surely, a wise and powerful one is needed for such might.</note>
@@ -275,6 +287,7 @@
                <l n="a">Oldur ḳādir u muḳtedir u ḥayy u ḳayyūm</l>
                <l n="b">‘Alīm u ‘allām u ḥakīm u müte‘āl</l>
                <note type="translation" xml:lang="en">He is the Capable, the Omnipotent, the All-Powerful, the Ordainer, and the Living; the All-Knowing, the Knower, the Infinite Knower, the Most Wise, and the Most High.</note>
+               <note type="commentary">Theology: Use of Asma al-Husna (the 99 Names of God) to emphasize divine attributes.</note>
             </lg>
             <lg n="50" type="couplet">
                <l n="a">Ne ṣāni‘-i kāmildür ki ḳudretinden gelür</l>
@@ -300,6 +313,7 @@
                <l n="a">Vėrdi ‘anāṣır-ı basīṭe şeref-i üns-i vaḥdet</l>
                <l n="b">Mürekkebāta ḳabūl-i terkīb-i eczā</l>
                <note type="translation" xml:lang="en">He gave the honor of the intimacy of unity to the simple elements, and the acceptance of the composition of parts to the complex beings.</note>
+               <note type="commentary">Cosmology: Allusion to the four elements (elements) and the synthesis of complex matter.</note>
             </lg>
             <lg n="55" type="couplet">
                <l n="a">Feyż alup hevā-yı cūdından bahār-ı cān-fezā</l>
@@ -325,11 +339,13 @@
                <l n="a">Eger lutfı mürebbi olsa bir dāneye</l>
                <l n="b">Yétürür Süha’yı rütbe-yi ḫurşīde</l>
                <note type="translation" xml:lang="en">If His grace were to nurture even a grain for the star Suha, Suha would reach the station of equality with the Sun.</note>
+               <note type="commentary">Astronomy: Suha is a very faint star in Ursa Major, used here to show Divine power to exalt the humble.</note>
             </lg>
             <lg n="60" type="couplet">
                <l n="a">Eger ḳahrı żāhir olsa ‘anāṣır u eflāke</l>
                <l n="b">Bozar ‘aḳd-i nikāḥ-ı ābā u ümmehāt</l>
                <note type="translation" xml:lang="en">If His wrath were to manifest upon the elements and the heavens, it would break the marriage bond between the "fathers" (planets) and "mothers" (elements).</note>
+               <note type="commentary">Sufi Cosmology: Planets were considered 'fathers' (aba) and elements 'mothers' (ummehat) in the birth of minerals, plants, and animals.</note>
             </lg>
             <lg n="61" type="couplet">
                <l n="a">Tamām éylemişdi rızḳ-ı cemī‘-i beşeri</l>
@@ -350,6 +366,7 @@
                <l n="a">Bıraḫdı bir avuç ḫāke āteş-i güli</l>
                <l n="b">Kül étdi u adını bülbül-i şeydā ḳoydı</l>
                <note type="translation" xml:lang="en">He cast the fire of the rose into a handful of dust on the path, turned it to ash, and named it "the frenzied nightingale."</note>
+               <note type="commentary">Mystic Alchemy: The transformation of dust/earth into a longing lover (the nightingale) through divine fire.</note>
             </lg>
             <lg n="65" type="couplet">
                <l n="a">Şevḳ-ı vuslat-ı ḫāk-i āsitānına</l>
