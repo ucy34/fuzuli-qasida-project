@@ -68,19 +68,21 @@
                     .manuscript-side img { width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid var(--border); }
                     .text-side { flex: 1; padding: 30px; }
 
+                    /* BEYİTLER ARASINDAKİ BOŞLUK (İSTEDİĞİN KISIM) */
                     .couplet { 
-                        margin-bottom: 45px !important; 
+                        margin-bottom: 50px !important; 
                         padding-bottom: 20px; 
                         border-bottom: 1px dashed var(--border); 
-                        display: block;
+                        display: block; 
                     }
-                    .couplet:last-child { border-bottom: none; margin-bottom: 0; }
-                    
+                    .couplet:last-child { border-bottom: none; }
+
                     .tr-text, .en-text { display: block; line-height: 1.8; }
                     .tr-text { font-style: italic; font-size: 1.2em; }
-                    .en-text { font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; }
+                    .en-text { font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; display: none; }
                     
-                    .tr-text span, .en-text span { display: block; margin-bottom: 10px; }
+                    /* MISRALAR ARASI MESAFE */
+                    .tr-text span, .en-text span { display: block; margin-bottom: 8px; }
 
                     .commentary-box {
                         display: none; margin-top: 15px; padding: 12px;
