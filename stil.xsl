@@ -7,7 +7,7 @@
             <head>
                 <title>Fuzûlî Digital Edition</title>
                 <style>
-                    /* TEMEL RENK DEĞİŞKENLERİ (LIGHT MODE - Arkadaşının Tasarımı) */
+                    /* TEMEL RENK DEĞİŞKENLERİ */
                     :root {
                         --bg-main: #f4f1ea;
                         --bg-card: #ffffff;
@@ -15,9 +15,11 @@
                         --accent: #800000;
                         --border: #ccc;
                         --shadow: rgba(0,0,0,0.1);
+                        --note-bg: #f9f9f9;
+                        --note-border: #3498db;
                     }
 
-                    /* DARK MODE RENK DEĞİŞKENLERİ (Bağımsız Tetiklenir) */
+                    /* DARK MODE DEĞİŞKENLERİ */
                     #darkToggle:checked ~ .site-wrapper {
                         --bg-main: #121212;
                         --bg-card: #1e1e1e;
@@ -25,23 +27,17 @@
                         --accent: #ff4d4d;
                         --border: #333;
                         --shadow: rgba(0,0,0,0.5);
+                        --note-bg: #252525;
+                        --note-border: #ff4d4d;
                     }
 
                     body { 
-                        margin: 0; 
-                        padding: 0; 
-                        font-family: 'Georgia', serif; 
-                        background-color: var(--bg-main);
-                        transition: background-color 0.3s ease;
+                        margin: 0; padding: 0; font-family: 'Georgia', serif; 
+                        background-color: var(--bg-main); transition: 0.3s;
                     }
 
-                    .site-wrapper {
-                        min-height: 100vh;
-                        padding: 20px;
-                        color: var(--text-primary);
-                    }
+                    .site-wrapper { min-height: 100vh; padding: 20px; color: var(--text-primary); }
 
-                    /* KONTROL PANELİ (SAĞ ÜST) */
                     .nav-controls {
                         position: fixed; top: 20px; right: 20px; z-index: 1000;
                         display: flex; flex-direction: column; gap: 10px;
@@ -55,17 +51,14 @@
                     }
                     .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-                    /* GİZLİ CHECKBOX'LAR */
                     #langToggle, #darkToggle { display: none; }
 
-                    /* BUTON METİNLERİ */
                     #langToggle:not(:checked) ~ .nav-controls .lang-btn:after { content: "Show English Translation"; }
                     #langToggle:checked ~ .nav-controls .lang-btn:after { content: "Show Turkish Transcription"; }
                     
                     #darkToggle:not(:checked) ~ .nav-controls .dark-btn:after { content: "🌙 Enable Dark Mode"; }
                     #darkToggle:checked ~ .nav-controls .dark-btn:after { content: "☀️ Enable Light Mode"; }
 
-                    /* SAYFA DÜZENİ */
                     .header-section { text-align: center; border-bottom: 3px double var(--accent); margin-bottom: 40px; padding: 20px; }
                     
                     .page-container { 
@@ -80,14 +73,25 @@
                     
                     .text-side { flex: 1; padding: 30px; }
 
-                    /* DİL DEĞİŞİM MANTIĞI */
+                    /* DİL VE NOT TASARIMI */
                     .tr-text { display: block; font-style: italic; font-size: 1.3em; line-height: 1.8; }
-                    .en-text { display: none; font-size: 1.2em; border-left: 5px solid var(--accent); padding-left: 20px; line-height: 1.7; color: var(--text-primary); }
+                    .en-text { display: none; font-size: 1.2em; border-left: 5px solid var(--accent); padding-left: 20px; line-height: 1.7; }
+
+                    /* Akademik Not (Commentary) Kutusu */
+                    .commentary-box {
+                        margin-top: 15px; padding: 12px;
+                        background-color: var(--note-bg);
+                        border-left: 4px solid var(--note-border);
+                        font-size: 0.9em; font-family: sans-serif;
+                        color: var(--text-primary);
+                    }
+                    .commentary-label { font-weight: bold; color: var(--note-border); text-transform: uppercase; font-size: 0.8em; display: block; margin-bottom: 5px; }
 
                     #langToggle:checked ~ .site-wrapper .tr-text { display: none; }
                     #langToggle:checked ~ .site-wrapper .en-text { display: block; }
 
-                    .couplet { margin-bottom: 35px; }
+                    .couplet { margin-bottom: 45px; border-bottom: 1px dashed var(--border); padding-bottom: 20px; }
+                    .couplet:last-child { border-bottom: none; }
                     .folio-label { font-weight: bold; color: var(--accent); display: block; margin-top: 15px; font-size: 1.1em; }
                 </style>
             </head>
@@ -120,9 +124,17 @@
                                                 <span style="display:block;"><xsl:value-of select="."/></span>
                                             </xsl:for-each>
                                         </div>
+                                        
                                         <div class="en-text">
                                             <xsl:value-of select="tei:note[@type='translation']"/>
                                         </div>
+
+                                        <xsl:if test="tei:note[@type='commentary']">
+                                            <div class="commentary-box">
+                                                <span class="commentary-label">Scholarly Commentary</span>
+                                                <xsl:value-of select="tei:note[@type='commentary']"/>
+                                            </div>
+                                        </xsl:if>
                                     </div>
                                 </xsl:for-each>
                             </div>
